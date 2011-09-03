@@ -1,6 +1,21 @@
+- if (syntax_highlighting)
+  script(type='text/javascript', src='/javascripts/sh_main.min.js')
+  script(type='text/javascript')
+    window.addEventListener('load', function() {
+      sh_highlightDocument('/javascripts/lang/', '.min.js');
+    }, false);
+
 article
   header
+    span.date #{post.date.format('MMMM dS, yyyy')}
     h2= post['title']
-    span.date #{post.date.toString('MMMM dS, yyyy')}
-  p!= post.content
+  p!= content
+  div.ad!= ad.code
+  - if (intensedebate_acct)
+    script
+      var idcomments_acct = !{JSON.stringify(intensedebate_acct)};
+      var idcomments_post_id = !{JSON.stringify(post.permalink)};
+      var idcomments_post_url;
+    span(id="IDCommentsPostTitle", style="display: none")
+    script(type="text/javascript", src="http://www.intensedebate.com/js/genericCommentWrapperV2.js")
   footer

@@ -1,0 +1,254 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin 0
+  padding 0
+  border 0
+  font-size 100%
+  font inherit
+  vertical-align baseline
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+  display block
+
+ol, ul
+  list-style none
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+html, body
+  height 100%
+
+@font-face
+  font-family 'BebasRegular'
+  font-style normal
+  font-weight normal
+  src url('fonts/BEBAS___-webfont.eot?') format('eot'), url('fonts/BEBAS___-webfont.woff') format('woff'), url('fonts/BEBAS___-webfont.ttf') format('truetype'), url('fonts/BEBAS___-webfont.svg#webfontOJIfwzl6') format('svg')
+
+serif-font = Georgia, serif
+sans-serif-font = BebasRegular, Helvetica, sans-serif
+monospace-font = Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace
+
+body
+  line-height 1
+  font-family serif-font
+  background-color white
+  min-width 1050px
+
+link-color = #4b8a79
+orange-color = #f28c3e
+red-color = #d4421f
+yellow-color = #d0d969
+light-color = #5c5c5c
+lightgrey-color = lighten(light-color, 120%)
+
+a
+  color link-color
+  text-decoration none
+  &:hover
+    color red-color
+
+h1
+  font-size 30px
+
+h2
+  font-size 24px
+
+p
+  line-height 1.5
+  margin-bottom 15px
+
+section#nav
+  position fixed
+  left 0px
+  top 0px
+  width 145px
+  padding 20px 10px
+  font-family sans-serif-font
+
+  div#profile
+    text-align center
+
+    a
+      color black
+      h1
+        margin-top 2px
+        font-weight bold
+        font-size 30px
+        -webkit-transition all 0.05s ease-in-out
+        -moz-transition all 0.05s ease-in-out
+        -o-transition all 0.05s ease-in-out
+
+        &:hover
+          color red-color
+          -webkit-transform: rotate(-5deg);
+          -moz-transform: rotate(-5deg);
+          -o-transform: rotate(-5deg);
+
+    img
+      border 2px solid lighten(orange-color, 20%)
+      padding 3px
+      text-align center
+      margin-bottom 10px
+      width 85px
+      height 85px
+
+  ul
+    margin-top 15px
+
+a.block
+  background-color orange-color
+  padding 5px
+  margin 5px
+  line-height 1.5
+  display block
+  color white
+  text-decoration none
+  font-weight bold
+  -webkit-transition all 0.05s ease-in-out
+  -moz-transition all 0.05s ease-in-out
+  -o-transition all 0.05s ease-in-out
+        
+  &:hover
+    background-color red-color
+    margin-left -10px
+    padding-left 20px 
+
+span.date
+  color light-color
+
+section#middle
+  padding 10px
+
+  margin 0 auto  
+  width 720px
+
+  article
+    header
+      margin-bottom 30px
+      h2
+        font-family sans-serif-font
+        font-size 30px
+      span.date
+        float right
+
+    p
+      font-size 18px
+      line-height 2
+      margin-bottom 15px
+
+      &:nth-child(3)
+        text-indent 50px
+
+    pre
+      border 4px solid orange-color
+      padding 10px
+      margin-bottom 10px
+      font-family monospace-font
+      font-size 14px
+      line-height 1.1
+
+    div.ad
+      text-align center
+      padding 20px
+      margin 0px auto
+      width 540px
+
+ul.posts
+  li
+    padding 7px
+    border-bottom 1px solid lightgrey-color
+    span.date
+      float right
+    &.ad
+      width 480px
+      margin 0px auto
+      text-align center
+      border-bottom none
+
+table.admin
+  font-size 14px
+  border-spacing 5px
+
+  th, td
+    padding 5px
+
+  thead
+    tr
+      font-weight bold
+      th
+        text-align left
+
+  tbody
+    tr
+      border-bottom 1px solid lightgrey-color
+
+ul.admin-links
+  list-style-type none
+  margin 15px 0px
+  padding 5px 0px
+
+  li
+    display inline
+    margin-right 5px
+
+    a
+      font-weight bold
+      font-family sans-serif-font
+      background-color orange-color
+      padding 5px
+      color white
+
+      &:hover
+        background-color red-color
+  
+form.admin
+  margin 20px 0px
+
+  fieldset
+    padding 10px 0px
+
+    &:last-of-type
+      margin-bottom 0px
+
+    legend
+      background-color link-color
+      padding 5px
+      color white
+      font-weight bold
+  
+  label
+    float left
+    width 100px
+    font-size 18px
+    padding-right 20px
+  
+  input
+    width 500px
+    font-size 18px
+
+    &[type=submit]
+      margin-left 120px
+
+  textarea
+    width 700px
+    font-size 12px
+    margin-top 10px
+
+  ul
+    li
+      line-height 30px
+      padding 5px 10px

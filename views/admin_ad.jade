@@ -1,0 +1,18 @@
+h1 Advertisements
+
+form.admin(method="POST")
+  p
+    | The code set here will be displayed at the bottom of the post list on the main
+    | page, as well as at the bottom of all posts before the comments section.
+
+  fieldset
+    ul
+      li
+        label Title:
+        input(name='title', size=30, value=ad.title)
+      li
+        label Code:
+        textarea(name='code', cols:60, rows=30)= ad.code
+      li
+        input(type='submit', value='Save')
+      input(name='id', type='hidden', value=ad._id)

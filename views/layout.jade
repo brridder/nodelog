@@ -2,33 +2,60 @@
 html
   head
     title= title
-    script(type: 'text/javascript', src: '/javascripts/tiny_mce/tiny_mce.js')
-    link(rel: 'stylesheet', href: '/stylesheets/style.css')
+    - if (google_site_verification)
+      meta(name="google-site-verification", content=google_site_verification)
+    link(rel='alternate', type='application/rss+xml', title='RSS', href=feed_url)
+    link(rel='stylesheet', href='/css/style.css')
+    - if (syntax_highlighting)
+      link(rel='stylesheet', href='/css/sh_emacs.min.css')
     - if (ga_id)
-      :javascript
-        | var ga_id = !{JSON.stringify(ga_id)};
-        | var ga_domain = !{JSON.stringify(ga_domain)};
-        | var _gaq = _gaq || [];
-        | _gaq.push(['_setAccount', ga_id]);
-        | _gaq.push(['_setDomainName', ga_domain]);
-        | _gaq.push(['_trackPageview']);
-        | (function() {
-        |   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        |   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        |   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        | })();
+      script(type="text/javascript")
+        var ga_id = !{JSON.stringify(ga_id)};
+        var ga_domain = !{JSON.stringify(ga_domain)};
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', ga_id]);
+        _gaq.push(['_setDomainName', ga_domain]);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
   body
-    section
-      header#masthead
-        section.centered
-          a(href: '/')
-            h1= title
-          h2= tagline
-          ul
-            - each link in links
-              li
-                a(href: link[1])= link[0]
-
-      section#content.centered!= body
-        footer#bottom
+    section#nav
+      div#profile
+        img(src="/images/me.png", width="85", height="85")
+        a(href="/")
+          h1 Casey Banner
+      ul
+        - each link in links
+          li
+            a.block(href=link[1])= link[0]
+      - if (admin)
+        br
+        h1 Admin
+        ul
+          li
+            a.block(href="/admin/post") Posts
+          li
+            a.block(href="/admin/ad") Ads
+          li
+            a.block(href='/admin/logout') Logout  
+                                                          
+    section#middle!= body
+    
+    br
+    - if(clicky_id)
+      script(type="text/javascript")
+        var clicky_site_id = !{clicky_id};
+        (function() {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//static.getclicky.com/js';
+          ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+      noscript
+        p
+          img(alt="Clicky", width="1", height="1", src="//in.getclicky.com/66404979ns.gif")
   

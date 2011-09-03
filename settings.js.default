@@ -5,6 +5,10 @@ exports.title = 'Nodelog Blog';
 exports.tagline = 'Another Blog!';
 exports.about = ['A line', 'in the about box'];
 exports.links = [['Twitter', 'http://twitter.com/'], ['RSS', '/feed']];
+exports.url = 'example.com';
+
+// Used as the RSS feed link for this blog. Useful if you use feedburner.
+exports.external_feed = 'LINK TO FEEDBURNER URL';
 
 exports.front_page_posts = 3;
 exports.recent_posts = 10;
@@ -14,3 +18,12 @@ exports.secret = 'FILL THIS IN WITH A DIFFERENT SECRET';
 exports.admin = {'username': 'USERNAME', 'password': 'SHA1 OF SECRET+PASSWORD'};
 exports.ga_id = 'UA-EXAMPLE-GA-ID';
 exports.ga_domain = '.example.com';
+
+// For Google Webmaster Central verification. This code is the "content" field in the meta tag
+exports.google_site_verification = 'META TAG "CONTENT" FIELD'
+
+// For intensedebate comments
+exports.intensedebate_acct = 'INTENSEDEBATE IDCOMMENTS_ACCT';
+
+// For clicky analytics
+exports.clicky_id = false
